@@ -1,0 +1,46 @@
+---
+title: "R Notebook"
+output:
+  html_document:
+    df_print: paged
+  pdf_document: default
+  word_document: default
+---
+
+EX 27.2.1
+
+1. Created Notebook (current file)
+
+2. Created Markdown Document and program asked me to enter the title and author and then automatically added it to the header for me.
+
+3. I'm not noticing anythig different? I switched YAML and barely noticed a change.
+
+4. I enjoyed the different knit options. HTML outputs what looks like a webpage, where the Word outputs directly into Word (seems very useful), PDF formats directly to PDf
+
+EX 27.2
+
+
+```{r setup, include = FALSE}
+library(ggplot2)
+library(dplyr)
+
+smaller <- diamonds %>% 
+  filter(carat <= 2.5)
+```
+
+We have data about `r nrow(diamonds)` diamonds. Only 
+`r nrow(diamonds) - nrow(smaller)` are larger than
+2.5 carats. The distribution of the remainder is shown
+below:
+
+```{r, echo = FALSE}
+smaller %>% 
+  ggplot(aes(carat)) + 
+  geom_freqpoly(binwidth = 0.01)
+```
+
+
+EX 27.3 see Markdown file
+
+
+
